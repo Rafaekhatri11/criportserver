@@ -10,6 +10,7 @@ router.post('/signup',testingEmail.nodeMailer);
 
 router.post('/login',testingEmail.login)
 
+router.put('/updateprofile/:uid',testingEmail.updatepro)
 router.post('/crimedetails',postdata.postDetails);
 
 router.post('/crime-type', type.type);
