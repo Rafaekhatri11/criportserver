@@ -29,7 +29,7 @@ module.exports = {
             Detail.find().then(data =>{
                 console.log(data[0])
                 res.send({
-                    details:data[0]
+                    details:data
                 })
             })
     }
