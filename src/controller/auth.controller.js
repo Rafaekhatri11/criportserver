@@ -41,8 +41,8 @@ module.exports = {
     },
 
     login: (req, res) => {
-        const body = req.body;
-        console.log(body)
+        const body = req.body.data;
+        console.log(body,"line 45")
         Usercreate.find({ "email": body.email })
             .then(user => {
                 console.log(user[0])
