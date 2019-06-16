@@ -9,7 +9,7 @@ const missing = require('../controller/missing.controller');
 router.post('/signup',testingEmail.nodeMailer);
 
 router.post('/login',testingEmail.login)
-
+router.get('/allcrime',postdata.getPostDetails)
 router.put('/updateprofile/:uid',testingEmail.updatepro)
 router.post('/crimedetails',postdata.postDetails);
 
