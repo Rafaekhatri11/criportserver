@@ -23,12 +23,9 @@ module.exports = {
         Usercreate.findByIdAndUpdate({ _id: req.params.uid }, {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
-
             password: req.body.password,
-
             phoneNumber: req.body.phoneNumber,
             imageURL: req.body.imageURL,
-
             gender: req.body.gender
         }).then(() => {
             Usercreate.findOne({_id: req.params.uid}).then(newdata => {
