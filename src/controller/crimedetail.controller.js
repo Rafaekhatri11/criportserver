@@ -25,12 +25,15 @@ module.exports = {
         })
     },
 
-    getPostDetails:(req,res)=>{
+    getPostDetails : (req,res) => {
+        
             Detail.find().then(data =>{
                 console.log(data[0])
                 res.send({
                     details:data
                 })
+            }).catch(err => {
+                console.log(err)
             })
     }
 }

@@ -17,6 +17,16 @@ var transporter = nodemail.createTransport({
 module.exports = {
     //Node Mailer send Email
 
+    alluser: (req,res) => {
+            Usercreate.find().then(data => {
+                res.send({
+                    users : data
+                })
+            }).catch(err => {
+                console.log(err)
+            })
+    },
+
     updatepro: (req, res) => {
         console.log(req.params.uid)
 
