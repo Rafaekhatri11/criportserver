@@ -23,7 +23,7 @@ module.exports = {
                     users : data
                 })
             }).catch(err => {
-                console.log(err)
+                console.log(err )
             })
     },
 
