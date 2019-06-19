@@ -7,8 +7,8 @@ var transporter = nodemail.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: "rafaekhatri11@gmail.com",
-        pass: "d@veloperone"
+        user: "Rafaekhatri11@gmail.com",
+        pass: "M@h169222"
     }
 });
 
@@ -57,7 +57,7 @@ module.exports = {
     },
 
     updatepro: (req, res) => {
-        console.log(req.params.uid)
+        
 
         Usercreate.findByIdAndUpdate({ _id: req.params.uid }, {
             firstname: req.body.firstname,
