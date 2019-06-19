@@ -22,7 +22,7 @@ router.post('/crimedetails',postdata.postDetails);
 router.post('/crime-type', type.type);
 
 router.post('/post-comment',comment.postComment);
-
+router.post('/approve',missing.approve);
 router.post('/missing-people',missing.missingperson);
 router.get('/getmissingpeople', missing.getmissing)
 module.exports = router;
