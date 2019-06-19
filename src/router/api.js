@@ -12,8 +12,11 @@ router.post('/login',testingEmail.login);
 router.get('/alluser',testingEmail.alluser);
 router.get('/allcrime',postdata.getPostDetails);
 
+
 router.put('/suspend/:uid',testingEmail.suspend);
 router.put('/updateprofile/:uid',testingEmail.updatepro);
+router.put('/updateprofileadmin/:uid',testingEmail.adminupdatepro)
+
 router.post('/crimedetails',postdata.postDetails);
 
 router.post('/crime-type', type.type);
