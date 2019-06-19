@@ -24,5 +24,5 @@ router.post('/crime-type', type.type);
 router.post('/post-comment',comment.postComment);
 
 router.post('/missing-people',missing.missingperson);
-
+router.get('/getmissingpeople', missing.getmissing)
 module.exports = router;
