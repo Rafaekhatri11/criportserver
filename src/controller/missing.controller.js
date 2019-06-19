@@ -5,7 +5,7 @@ module.exports = {
 
      approve : (req,res) => {
         Missing.findByIdAndUpdate({_id: req.params.uid} ,{
-            approve: req.body.approve
+           persons:{ approve: req.body.approve}
         }).then(() => {
                 Missing.find().then(data => {
                     res.send({
