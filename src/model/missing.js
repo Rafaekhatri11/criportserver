@@ -23,6 +23,10 @@ const missingPerson = new Schema({
                 Location : {
                     type: Object,
                    required: true
+                },
+                approve: {
+                    type: Boolean,
+                    default: false
                 }
     }
 })
