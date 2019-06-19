@@ -2,7 +2,21 @@ const Missing = require('../model/missing');
 
 module.exports = {
 
-    getmissing: (req,res) => {
+
+     approve : (req,res) => {
+        Missing.findByIdAndUpdate({_id: req.params.uid} ,{
+            approve: req.body.approve
+        }).then(() => {
+                Missing.find().then(data => {
+                    res.send({
+                        missing : data
+                    })
+                }).catch(err => {
+                    console.log(err )
+                })
+        })
+     },
+     getmissing: (req,res) => {
             Missing.find().then((allmissing) => {
                 res.send({
                     missing : allmissing
