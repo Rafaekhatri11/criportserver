@@ -17,6 +17,19 @@ var transporter = nodemail.createTransport({
 module.exports = {
     //Node Mailer send Email
 
+    suspend: (req,res) => {
+        Usercreate.findByIdAndUpdate({_id: req.params.uid} ,{
+            suspend: req.body.suspend
+        }).then(() => {
+                Usercreate.find().then(data => {
+                    res.send({
+                        users : data
+                    })
+                }).catch(err => {
+                    console.log(err )
+                })
+        })
+    },
     alluser: (req,res) => {
             Usercreate.find().then(data => {
                 res.send({
