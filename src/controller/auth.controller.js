@@ -188,14 +188,14 @@ module.exports = {
                             })
 
 
-                            return res.status(200).send({
+                            return res.send({
                                 message: 'Register Successfully',
                                 token: token
                             })
 
                         })
                         .catch(err => {
-                            return res.status(500).send({
+                            return res.send({
                                 message: err
                             });
                         });
