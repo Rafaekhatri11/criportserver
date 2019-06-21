@@ -16,6 +16,13 @@ var transporter = nodemail.createTransport({
 
 module.exports = {
     //Node Mailer send Email
+    delete: (req,res) => {
+        Usercreate.findByIdAndRemove({_id: req.params.uid}).then(() => {
+            Usercreate.find().then(data => {
+                res.send(data)
+            })
+        })
+    },
     adminupdatepro :(req ,res) => {
         Usercreate.findByIdAndUpdate({ _id: req.params.uid }, {
             firstname: req.body.firstname,
