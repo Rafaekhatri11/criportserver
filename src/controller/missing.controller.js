@@ -5,9 +5,9 @@ module.exports = {
      delete : (req,res) => {
          Missing.findByIdAndRemove({_id:req.params.uid}).then(() => {
              Missing.find().then((data)=>{
-                 res.send(data)
+                 res.send(data);
              }).catch((err) => {
-                 console.log(err)
+                 console.log(err);
              })
          })
      },
