@@ -77,18 +77,18 @@ module.exports = {
     },
 
     login: (req, res) => {
-        const body = req.body;
-        console.log(body,"line 45")
-        Usercreate.find({ "email": body.email })
+      
+       
+        Usercreate.find({ "email": req.body.email })
             .then(user => {
-                console.log(user[0])
+               
                 if (user.length < 1) {
                     res.send({
                         message: 'User deos not exist'
                     });
                 }
 
-                if (body.password === user[0].password) {
+                if (req.body.password === user[0].password) {
                     let getuser = user[0];
                     const token = jwt.sign({
                         uid: getuser._id,
