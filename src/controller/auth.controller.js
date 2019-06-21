@@ -7,8 +7,8 @@ var transporter = nodemail.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: "rafaekhatri11@gmail.com",
-        pass: "d@veloperone"
+        user: "Rafaekhatri11@gmail.com",
+        pass: "M@h169222"
     }
 });
 
@@ -16,6 +16,13 @@ var transporter = nodemail.createTransport({
 
 module.exports = {
     //Node Mailer send Email
+    delete: (req,res) => {
+        Usercreate.findByIdAndRemove({_id: req.params.uid}).then(() => {
+            Usercreate.find().then(data => {
+                res.send(data)
+            })
+        })
+    },
     adminupdatepro :(req ,res) => {
         Usercreate.findByIdAndUpdate({ _id: req.params.uid }, {
             firstname: req.body.firstname,
@@ -57,7 +64,7 @@ module.exports = {
     },
 
     updatepro: (req, res) => {
-        console.log(req.params.uid)
+        
 
         Usercreate.findByIdAndUpdate({ _id: req.params.uid }, {
             firstname: req.body.firstname,
@@ -188,14 +195,14 @@ module.exports = {
                             })
 
 
-                            return res.status(200).send({
+                            return res.send({
                                 message: 'Register Successfully',
                                 token: token
                             })
 
                         })
                         .catch(err => {
-                            return res.status(500).send({
+                            return res.send({
                                 message: err
                             });
                         });

@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
 
 
-app.use(router);
+app.use(router);    
 
 app.get('/', (req,res)=>{
     res.send("Hello World");

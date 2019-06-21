@@ -18,7 +18,7 @@ module.exports = {
         Details.save()
         .then((data) => {
             console.log(data);
-            res.send("Success");
+            res.send(data);
         })
         .catch(err => {
             res.status(500).send(err)
