@@ -21,7 +21,7 @@ router.put('/updateprofileadmin/:uid',testingEmail.adminupdatepro)
 router.post('/crimedetails',postdata.postDetails);
 
 router.post('/crime-type', type.type);
-router.post('/deletemissing/:uid',missing.delete)
+router.delete('/deletemissing/:uid',missing.delete)
 router.post('/post-comment',comment.postComment);
 router.put('/approve/:uid',missing.approve);
 router.post('/missing-people',missing.missingperson);

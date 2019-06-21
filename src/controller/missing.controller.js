@@ -2,7 +2,7 @@ const Missing = require('../model/missing');
 
 module.exports = {
 
-     delete :( req,res) => {
+     delete : (req,res) => {
          Missing.findByIdAndRemove({_id:req.params.uid}).then(() => {
              Missing.find().then((data)=>{
                  res.send(data)
