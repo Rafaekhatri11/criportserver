@@ -14,8 +14,12 @@ module.exports = {
      approve : (req,res) => {
         Missing.findByIdAndUpdate({_id: req.params.uid} ,{
            persons: {
-                approve: req.body.approve
-            
+                approve: req.body.approve,
+                Name: req.body.Name,
+                Description: req.body.Description,
+                iamgeURL: req.body.imageURL ,
+                dateAndTime: new Date(),
+                Location: req.body.location
             }
         }).then(() => {
                 Missing.find().then(data => {
